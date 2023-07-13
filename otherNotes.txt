@@ -1,0 +1,27 @@
+
+business model:
+
+website creation is free
+
+monthly maintenance is $200 a month/flat* (all problems and issues; just contact me and I will take care of it)
+this is flat unless scaling is needed, at which point the AWS needs will be a seperately invoiced item that Darly can then upload his own credit card credentials into (or maybe Anthony can require reimbursement for monthly fees)
+
+
+
+
+
+notes:
+
+User model, LoginUser model, Profile model?, Comment model?, 
+
+
+Order model should include all possible ordered items?
+
+
+
+
+colors:
+
+#FE1216 - red
+#F8C20D - yellow
+
