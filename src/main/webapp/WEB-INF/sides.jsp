@@ -12,9 +12,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TraPWanGz | Login</title>
+<title>TraPWanGz | Sides</title>
 </head>
 <body>
+
+
 	<nav class="navbar">
     
     <div class="logo"></div>
@@ -24,7 +26,7 @@
       <div class="menu">
 
         <li class="services">
-          <a href="/menu">Menu</a>
+          <a href="/createOrder">Create Order</a>
 
           <ul class="dropdown">
             <li><a href="/">Wings</a></li>
@@ -34,35 +36,35 @@
 
         </li>
 
+        <li><a href="/home">Home</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Make an Account</a></li>
       </div>
     </ul>
   </nav>
-
-<form:form action = "/login" mode = "post" modelAttribute = "loginuser">
-<h2>Login</h2>
-
-	<div class = "mb-3">
-		<form:label class="form-label" path = "email" >Email</form:label>
-		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216; color: #EDF3F8;" />
-	</div>
+  
+    <div id = "menuMain">
+	<form:form action = "/chooseSide"  method = "post"  modelAttribute = "order">
+	<input type = "hidden" name = "_method" value = "put">
 	
-	<div class = "mb-3">
-		<form:label class="form-label" path = "password" >Password</form:label>
-		<form:errors path = "password" class = "danger-text"/>
-		<form:input class = "form-control" id = "password" path = "password" type = "password" style = "background-color: #FE1216" />
-	</div>
+		<form:label  path = "sideChoice">Choose your flavor</form:label>
+			<form:select  path = "sideChoice" name="sideChoice" id="sideChoice">
+				<form:option value="FFS" path = "sideChoice">French Fries</form:option>
+				<form:option value="MCC" path = "sideChoice">Mac & Cheese</form:option>
+				<form:option value="BAB"  path = "sideChoice" >Baked Beans</form:option>
+			</form:select>
+			
+			<div>
+				<form:errors path="user" class="error"/>			
+				<form:input type="hidden"  path="user"  value="${user.id}"/>
+			</div>
+			
+		<button type = "submit"  value  = "chooseSide" >Next Screen</button>
 		
-	<div>
-		<button class = "btn btn-success" type = "submit" value = "Login">Login</button>
-	</div>
-	
-</form:form>
-
-<a href = "/">Back Home</a>
+	</form:form>
+</div>  
+  
 
 </body>
 </html>

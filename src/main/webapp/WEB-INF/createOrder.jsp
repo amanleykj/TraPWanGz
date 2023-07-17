@@ -12,9 +12,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TraPWanGz | Login</title>
+<title>TraPWanGz | Create Order</title>
 </head>
 <body>
+
 	<nav class="navbar">
     
     <div class="logo"></div>
@@ -34,6 +35,7 @@
 
         </li>
 
+        <li><a href="/home">Home</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Make an Account</a></li>
@@ -41,28 +43,25 @@
     </ul>
   </nav>
 
-<form:form action = "/login" mode = "post" modelAttribute = "loginuser">
-<h2>Login</h2>
-
-	<div class = "mb-3">
-		<form:label class="form-label" path = "email" >Email</form:label>
-		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216; color: #EDF3F8;" />
-	</div>
+<div id = "menuMain">
+	<form:form action = "/createOrder"  method = "post"  modelAttribute = "order">
 	
-	<div class = "mb-3">
-		<form:label class="form-label" path = "password" >Password</form:label>
-		<form:errors path = "password" class = "danger-text"/>
-		<form:input class = "form-control" id = "password" path = "password" type = "password" style = "background-color: #FE1216" />
-	</div>
+		<form:label path = "comboChoice">Choose your combo</form:label>
+			<form:select name = "comboChoice"  path = "comboChoice"  id ="comboChoice">
+				<form:option value="1"   >6-Piece Combo</form:option>
+				<form:option value="2"  >10-Piece Combo</form:option>
+				<form:option value="3"   >15-Piece Combo</form:option>
+			</form:select>
+			
+			<div>
+				<form:errors path="user" class="error"/>			
+				<form:input type="hidden"  path="user"  value="${user.id}"/>
+			</div>
+			
+		<button type = "submit"  value  = "createOrder" >Next Screen</button>
 		
-	<div>
-		<button class = "btn btn-success" type = "submit" value = "Login">Login</button>
-	</div>
-	
-</form:form>
-
-<a href = "/">Back Home</a>
+	</form:form>
+</div>
 
 </body>
 </html>

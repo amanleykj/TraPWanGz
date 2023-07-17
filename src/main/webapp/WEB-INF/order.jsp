@@ -12,9 +12,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TraPWanGz | Login</title>
+<title>TraPWanGz | Order</title>
 </head>
 <body>
+
 	<nav class="navbar">
     
     <div class="logo"></div>
@@ -34,6 +35,7 @@
 
         </li>
 
+        <li><a href="/home">Home</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Make an Account</a></li>
@@ -41,23 +43,17 @@
     </ul>
   </nav>
 
-<form:form action = "/login" mode = "post" modelAttribute = "loginuser">
-<h2>Login</h2>
+<h2>Continue to build your order</h2>
+<form:form action = "/order" mode = "post" modelAttribute = "order">
 
 	<div class = "mb-3">
-		<form:label class="form-label" path = "email" >Email</form:label>
-		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216; color: #EDF3F8;" />
-	</div>
-	
-	<div class = "mb-3">
-		<form:label class="form-label" path = "password" >Password</form:label>
-		<form:errors path = "password" class = "danger-text"/>
-		<form:input class = "form-control" id = "password" path = "password" type = "password" style = "background-color: #FE1216" />
+		<form:label class="form-label" path = "order" >Your order</form:label>
+		<form:errors path = "order" class = "danger-text"/>
+		<form:input class = "form-control" id = "order" path = "order" style = "background-color: #FE1216; color: #EDF3F8;" />
 	</div>
 		
 	<div>
-		<button class = "btn btn-success" type = "submit" value = "Login">Login</button>
+		<button class = "btn btn-success" type = "submit" value = "Order">Make Order</button>
 	</div>
 	
 </form:form>

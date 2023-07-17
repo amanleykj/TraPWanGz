@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.trapwangz.models.Contact;
 import com.trapwangz.models.LoginUser;
 import com.trapwangz.models.User;
 import com.trapwangz.services.ContactService;
@@ -26,7 +25,7 @@ public class UserController {
 	ContactService contactService;
 	
 	@GetMapping("/")
-	public String login() {
+	public String index() {
 		return "index.jsp";
 	}
 	
@@ -41,13 +40,7 @@ public class UserController {
 		model.addAttribute("loginuser", new LoginUser());
 		return "login.jsp";
 	}
-	
-	@GetMapping("/contact")
-	public String contact(Model model) {
-		model.addAttribute("contact", new Contact());
-		return "contact.jsp";
-	}
-	
+			
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, HttpSession session) {
 		userService.register(user, result);
@@ -60,24 +53,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public String login(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, HttpSession session) {
-		userService.register(user, result);
+	public String login(@Valid @ModelAttribute("loginuser") LoginUser user, BindingResult result, Model model, HttpSession session) {
+		userService.login(user, result);
 		if(result.hasErrors()) {
 			model.addAttribute("loginuser", new LoginUser());
 			return "login.jsp";
 		}
-		session.setAttribute("userId", user.getId());
-		return "redirect:/home";
-	}
-	
-	@PostMapping("/contact")
-	public String contact(@Valid @ModelAttribute("user") Contact contact, BindingResult result, Model model, HttpSession session) {
-		contactService.sendContact(contact, result);
-		if(result.hasErrors()) {
-			model.addAttribute("contact", new Contact());
-			return "contact.jsp";
-		}
-		
+		User user1 = userService.login(user, result);
+		session.setAttribute("userId", user1.getId());
 		return "redirect:/home";
 	}
 	
@@ -90,6 +73,10 @@ public class UserController {
 		return "home.jsp";
 	}
 	
-	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.setAttribute("userId", null);
+		return "redirect:/";
+	}
 
 }

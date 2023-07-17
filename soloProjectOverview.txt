@@ -27,6 +27,8 @@ feature list:
 - create order
 - choose items for order
 - submit order
+- v1 is submit order through radio buttons that added more characters to one whole string
+- * v2 is to have developed Order object that creates multiple items in array
 - *payment through website itself (PayPal, Stripe integration)
 - integration with IG to display new pictures/videos on site
 - *embedded alert that displays "making a profile gives you 5% off; posting profile allows you collect Traps (every 5 Traps gives you a free food item)
@@ -34,6 +36,7 @@ feature list:
 - No session = no access to all pages on/functions of site
 - *site users can select from array of design choices for their profiles
 - * create user account based on Contact model (Contact model already takes firstName, lastName, and email; could we just assign temp password and then have the user change it later?)
+
 
 *non-MVP; these are additional features that will be included in the backlog below
 
