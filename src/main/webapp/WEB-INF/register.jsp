@@ -24,12 +24,12 @@
       <div class="menu">
 
         <li class="services">
-          <a href="/menu">Menu</a>
+          <a href="/createOrder">Create Order</a>
 
           <ul class="dropdown">
-            <li><a href="/">Wings</a></li>
-            <li><a href="/">Sides</a></li>
-            <li><a href="/">Sets</a></li>
+            <li><a href="/wings">Wings</a></li>
+            <li><a href="/sides">Sides</a></li>
+            <li><a href="/sets">Sets</a></li>
           </ul>
 
         </li>
@@ -48,31 +48,31 @@
 	<div class = "mb-3">
 		<form:label for = "firstName" path = "firstName" class="form-label">First Name</form:label>
 		<form:errors path = "firstName" class = "danger-text"/>
-		<form:input class = "form-control" id = "firstName" path = "firstName" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "firstName" path = "firstName"  />
 	</div>
 	
 	<div class = "mb-3">
 		<form:label for = "lastName" path = "lastName" class="form-label">Last Name</form:label>
 		<form:errors path = "lastName" class = "danger-text"/>
-		<form:input class = "form-control" id = "lastName" path = "lastName" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "lastName" path = "lastName"  />
 	</div>
 	
 	<div class = "mb-3">
 		<form:label for = "email" class = "form-label" path = "email">Email</form:label>
 		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "email" path = "email"  />
 	</div>
 	
 	<div class = "mb-3">
 		<form:label path = "password" class="form-label">Password</form:label>
 		<form:errors path = "password" class = "danger-text"/>
-		<form:input class = "form-control" id = "password" path = "password" type = "password" style = "background-color: #FE1216"/>
+		<form:input class = "form-control" id = "password" path = "password" type = "password" />
 	</div>
 	
 	<div class = "mb-3">
 		<form:label path = "confirmPassword" class="form-label">Confirm Password</form:label>
 		<form:errors path = "confirmPassword" class = "danger-text"/>
-		<form:input class = "form-control" id = "confirmPassword" path = "confirmPassword" type = "password" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "confirmPassword" path = "confirmPassword" type = "password"  />
 	</div>
 	
 	<div>

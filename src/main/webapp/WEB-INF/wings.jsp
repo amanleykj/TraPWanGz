@@ -12,14 +12,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TraPWanGz | Your Page</title>
+<title>TraPWanGz | Wings</title>
 </head>
 <body>
+
 	<nav class="navbar">
-    
     <div class="logo">Welcome, ${user.firstName} | <a href = "/logout">Log out of your account</a>
     </div>
-    
     <ul class="nav-links">
 
       <div class="menu">
@@ -43,43 +42,10 @@
     </ul>
   </nav>
 
+<h1>WINGS</h1>
+<h2>Product Information Coming soon</h2>
 
-<div>
-<!-- 	If an order ID has the user_id of the current session userId, it should display; otherwise, it should not display -->
- 
- 
-<%--  <p>${allOrders.2.comboChoice}</p> --%>
-<%--  <p>${user.firstName}</p> --%>
-<%-- <p>${user.lastName}</p> --%>
-<%-- <p>${user.orders.1}</p> --%>
-<%-- <p>${user.firstName}</p> --%>
- 
- 
- 
- 
- 
- 
-<%--  			<c:choose>		    --%>
-<%-- 	   	<c:forEach var = "allOrders" items = "${allOrders}"> --%>
-<%-- 				<c:when test="${allOrders.user} ==  ${user.id}"> --%>
-<%-- 					<c:out value = "${allOrders.comboChoice}" /> --%>
-<%-- 					<c:out value = "${allOrder.flavorChoice}" /> --%>
-<%-- 				</c:when> --%>
-												  			
-<%-- 				  <c:otherwise> --%>
-<%-- 					<c:out value = "You don't have any orders now. Click the 'Create Order' button above to continue." /> --%>
-<%-- 				  </c:otherwise> --%>
-<%--        	</c:forEach> --%>
-							
-<%-- 			</c:choose> --%>
-	<br>
-	
-	
-	
-	
-</div>
-
-
+<a href = "/">Back Home</a>
 
 </body>
 </html>

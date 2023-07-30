@@ -16,10 +16,9 @@
 </head>
 <body>
 
-
 	<nav class="navbar">
-    
-    <div class="logo"></div>
+        <div class="logo">Welcome, ${user.firstName} | <a href = "/logout">Log out of your account</a>
+    </div>
 
     <ul class="nav-links">
 
@@ -29,9 +28,9 @@
           <a href="/createOrder">Create Order</a>
 
           <ul class="dropdown">
-            <li><a href="/">Wings</a></li>
-            <li><a href="/">Sides</a></li>
-            <li><a href="/">Sets</a></li>
+            <li><a href="/wings">Wings</a></li>
+            <li><a href="/sides">Sides</a></li>
+            <li><a href="/sets">Sets</a></li>
           </ul>
 
         </li>
@@ -43,28 +42,11 @@
       </div>
     </ul>
   </nav>
-  
-    <div id = "menuMain">
-	<form:form action = "/chooseSide"  method = "post"  modelAttribute = "order">
-	<input type = "hidden" name = "_method" value = "put">
-	
-		<form:label  path = "sideChoice">Choose your flavor</form:label>
-			<form:select  path = "sideChoice" name="sideChoice" id="sideChoice">
-				<form:option value="FFS" path = "sideChoice">French Fries</form:option>
-				<form:option value="MCC" path = "sideChoice">Mac & Cheese</form:option>
-				<form:option value="BAB"  path = "sideChoice" >Baked Beans</form:option>
-			</form:select>
-			
-			<div>
-				<form:errors path="user" class="error"/>			
-				<form:input type="hidden"  path="user"  value="${user.id}"/>
-			</div>
-			
-		<button type = "submit"  value  = "chooseSide" >Next Screen</button>
-		
-	</form:form>
-</div>  
-  
+
+<h1>SIDES</h1>
+<h2>Product Information Coming soon</h2>
+
+<a href = "/">Back Home</a>
 
 </body>
 </html>

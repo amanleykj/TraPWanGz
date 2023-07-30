@@ -24,12 +24,12 @@
       <div class="menu">
 
         <li class="services">
-          <a href="/menu">Menu</a>
+          <a href="/createOrder">Create Order</a>
 
           <ul class="dropdown">
-            <li><a href="/">Wings</a></li>
-            <li><a href="/">Sides</a></li>
-            <li><a href="/">Sets</a></li>
+            <li><a href="/wings">Wings</a></li>
+            <li><a href="/sides">Sides</a></li>
+            <li><a href="/sets">Sets</a></li>
           </ul>
 
         </li>
@@ -41,19 +41,20 @@
     </ul>
   </nav>
 
+<div class = "formBasic">
 <form:form action = "/login" mode = "post" modelAttribute = "loginuser">
 <h2>Login</h2>
 
 	<div class = "mb-3">
 		<form:label class="form-label" path = "email" >Email</form:label>
 		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216; color: #EDF3F8;" />
+		<form:input class = "form-control" id = "email" path = "email" />
 	</div>
 	
 	<div class = "mb-3">
 		<form:label class="form-label" path = "password" >Password</form:label>
 		<form:errors path = "password" class = "danger-text"/>
-		<form:input class = "form-control" id = "password" path = "password" type = "password" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "password" path = "password" type = "password"  />
 	</div>
 		
 	<div>
@@ -61,6 +62,7 @@
 	</div>
 	
 </form:form>
+</div>
 
 <a href = "/">Back Home</a>
 

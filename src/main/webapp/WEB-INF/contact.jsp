@@ -24,17 +24,16 @@
       <div class="menu">
 
         <li class="services">
-          <a href="/menu">Menu</a>
+          <a href="/createOrder">Create Order</a>
 
           <ul class="dropdown">
-            <li><a href="/">Wings</a></li>
-            <li><a href="/">Sides</a></li>
-            <li><a href="/">Sets</a></li>
+            <li><a href="/wings">Wings</a></li>
+            <li><a href="/sides">Sides</a></li>
+            <li><a href="/sets">Sets</a></li>
           </ul>
 
         </li>
 
-        <li><a href="/home">Home</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Make an Account</a></li>
@@ -42,31 +41,32 @@
     </ul>
   </nav>
 
+<div class = "formBasic">
 <form:form action = "/contact" mode = "post" modelAttribute = "contact">
 <h2>Contact </h2>
 
 	<div class = "mb-3">
 		<form:label class="form-label" path = "firstName" >First Name</form:label>
 		<form:errors path = "firstName" class = "danger-text"/>
-		<form:input class = "form-control" id = "firstName" path = "firstName" style = "background-color: #FE1216; color: #EDF3F8;" />
+		<form:input class = "form-control" id = "firstName" path = "firstName" />
 	</div>
 	
 		<div class = "mb-3">
 		<form:label class="form-label" path = "lastName" >Last Name</form:label>
 		<form:errors path = "lastName" class = "danger-text"/>
-		<form:input class = "form-control" id = "lastName" path = "lastName" style = "background-color: #FE1216; color: #EDF3F8;" />
+		<form:input class = "form-control" id = "lastName" path = "lastName" />
 	</div>
 	
 	<div class = "mb-3">
-		<form:label class="form-label" path = "email" >Email (don't worry, we won't send you anything)</form:label>
+		<form:label class="form-label" path = "email" >Contact Email</form:label>
 		<form:errors path = "email" class = "danger-text"/>
-		<form:input class = "form-control" id = "email" path = "email" style = "background-color: #FE1216" />
+		<form:input class = "form-control" id = "email" path = "email"  />
 	</div>
 	
 		<div class = "mb-3">
-		<form:label class="form-label" path = "contactMessage" >Question/Comment</form:label>
+		<form:label class="form-label" path = "contactMessage" >Your Question/Comment</form:label>
 		<form:errors path = "contactMessage" class = "danger-text"/>
-		<form:input class = "form-control" id = "contactMessage" path = "contactMessage" style = "background-color: #FE1216; color: #EDF3F8;" />
+		<form:input type = "textarea" class = "form-control" id = "contactMessage" path = "contactMessage" />
 	</div>
 		
 	<div>
@@ -74,6 +74,7 @@
 	</div>
 	
 </form:form>
+</div>
 
 <a href = "/">Back Home</a>
 

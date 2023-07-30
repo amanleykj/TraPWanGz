@@ -28,14 +28,16 @@ public class Orders {
 	
 	private Integer comboChoice;
 	
-	private String flavorChoice;
+	private Integer flavorChoice;
 	
-	public String sideChoice;
+	private Integer sideChoice;
 	
-	public String drinkChoice;
+	private Integer drinkChoice;
 	
 	@Size(max = 500, message = "Please limit your comments to 500 characters.")
 	private String notes;
+	
+	private String orderComplete;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
@@ -43,7 +45,7 @@ public class Orders {
 	
 	public Orders() {}
 	
-	public Orders(Integer comboChoice, String flavorChoice, String sideChoice, String drinkChoice) {
+	public Orders(Integer comboChoice, Integer flavorChoice, Integer sideChoice, Integer drinkChoice) {
 		this.comboChoice = comboChoice;
 		this.flavorChoice = flavorChoice;
 		this.sideChoice = sideChoice;
@@ -90,28 +92,28 @@ public class Orders {
 	public void setComboChoice(Integer comboChoice) {
 		this.comboChoice = comboChoice;
 	}
-		
-	public String getFlavorChoice() {
+	
+	public Integer getFlavorChoice() {
 		return flavorChoice;
 	}
 
-	public void setFlavorChoice(String flavorChoice) {
+	public void setFlavorChoice(Integer flavorChoice) {
 		this.flavorChoice = flavorChoice;
-	}	
+	}
 
-	public String getSideChoice() {
+	public Integer getSideChoice() {
 		return sideChoice;
 	}
 
-	public void setSideChoice(String sideChoice) {
+	public void setSideChoice(Integer sideChoice) {
 		this.sideChoice = sideChoice;
 	}
 
-	public String getDrinkChoice() {
+	public Integer getDrinkChoice() {
 		return drinkChoice;
 	}
 
-	public void setDrinkChoice(String drinkChoice) {
+	public void setDrinkChoice(Integer drinkChoice) {
 		this.drinkChoice = drinkChoice;
 	}
 
@@ -122,7 +124,7 @@ public class Orders {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-
+	
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -137,6 +139,15 @@ public class Orders {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+	public String getOrderComplete() {
+		return orderComplete;
+	}
+
+	public void setOrderComplete(String orderComplete) {
+		this.orderComplete = orderComplete;
 	}	
+	
 
 }

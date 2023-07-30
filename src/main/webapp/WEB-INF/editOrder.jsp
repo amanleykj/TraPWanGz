@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TraPWanGz | Create Order</title>
+<title>TraPWanGz | Edit Order</title>
 </head>
 <body>
 
@@ -45,18 +45,16 @@
   </nav>
 
 <div id = "menuMain">
-	<form:form action = "/createOrder"  method = "post"  modelAttribute = "order">
+<form:form action = "/order/${order.id}" mode = "put" modelAttribute = "order">
+	<input type = "hidden" name = "_method" value = "put">
 	
-		<div class = "form-floating mb-3">
 			<form:label path = "comboChoice">Choose your combo</form:label>
 			<form:select name = "comboChoice"  path = "comboChoice"  id ="comboChoice">
 				<form:option value="1"   >6-Piece Combo</form:option>
 				<form:option value="2"  >10-Piece Combo</form:option>
 				<form:option value="3"   >15-Piece Combo</form:option>
 			</form:select>
-		</div>
-
-		<div class = "form-floating mb-3">			
+			
 			<form:label path = "flavorChoice">Choose your sauce</form:label>
 			<form:select  path = "flavorChoice" name="flavorChoice" id="flavorChoice">
 				<form:option value="1" path = "flavorChoice">BMF</form:option>
@@ -78,43 +76,32 @@
 				<form:option value="17" path = "flavorChoice">Ranch</form:option>
 				<form:option value="18"  path = "flavorChoice">24k</form:option>
 			</form:select>
-		</div>
-		
-		
-		<div class = "form-floating mb-3">	
-			<form:label path = "sideChoice">Choose your side</form:label>
+			
+			<form:label path = "flavorChoice">Choose your side</form:label>
 			<form:select  path = "sideChoice" name="sideChoice" id="sideChoice">
 				<form:option value="1" path = "sideChoice">French Fries</form:option>
 				<form:option value="2" path = "sideChoice">Mac & Cheese</form:option>
 				<form:option value="3"  path = "sideChoice" >Baked Beans</form:option>
 			</form:select>
-		</div>			
-		
-		<div class = "form-floating mb-3">
-			<form:label path = "drinkChoice">Choose your drink (optional)</form:label>
+			
+			<form:label path = "flavorChoice">Choose your drink (optional)</form:label>
 			<form:select  path = "drinkChoice" name="drinkChoice" id="drinkChoice">
-				<form:option value="0" path = "drinkChoice">(none)</form:option>
+				<form:option value="0" path = "drinkChoice">(None)</form:option>
 				<form:option value="1"  path = "drinkChoice" >Sprite</form:option>
 				<form:option value="2" path = "drinkChoice">Coke</form:option>
-				<form:option value="3"  path = "drinkChoice" >Trap Juice (grape lemonade)</form:option>
+				<form:option value="3"  path = "drinkChoice" >Trap Juice (grade lemonade)</form:option>
 			</form:select>
-		</div>
 			
-		<div class = "form-floating mb-3">
-
+		<form:label for = "notes" class="form-label" path = "notes">Additional Requests</form:label>
 		<form:errors path = "notes" class = "danger-text"/>
-		<form:input type = "textarea" class = "form-control" id = "floatingInput" path = "notes" />
-		</div>
-		
+		<form:input type = "textarea" class = "form-control" id = "notes" path = "notes" />
+				
 			<form:input type="hidden"  path="user"  value="${user.id}"/>
 			<form:errors path = "orderComplete" class = "danger-text"/>
 			<form:input type="hidden"  path="orderComplete"  value = "no" />
-		<p>Please include any comments about your order above</p>
-		
-		<hr>
 
 			
-		<button class = "btn btn-primary" type = "submit"  value  = "createOrder" >Confirmation Screen</button>
+		<button type = "submit"  value  = "createOrder" >Confirmation Screen</button>
 		
 	</form:form>
 </div>

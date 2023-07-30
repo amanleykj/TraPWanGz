@@ -29,24 +29,20 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Size(min = 2, max = 25, message = "Your first name must be between two and 25 characters.")
-	@NotBlank(message = "Please fill in your first name here.")
+	@Size(min = 2, max = 25, message = "Must be between two and 25 characters.")
 	private String firstName;
 	
-	@Size(min = 2, max = 25, message = "Your last name must be between two and 25 characters.")
-	@NotBlank(message = "Please fill in your last name here.")
+	@Size(min = 2, max = 25, message = "Must be between two and 25 characters.")
 	private String lastName;
 	
-	@Email(message = "Must be a valid email format.")
+	@Email(message = "Must be a valid email format and not blank.")
 	@NotBlank(message = "This cannot be blank.")
 	private String email;
 	
-	@NotEmpty(message = "This cannot be blank.")
 	@Size(min = 8, max = 128, message = "Enter your password here.")
 	private String password;
 	
 	@Transient
-	@NotEmpty(message = "This cannot be blank.")
 	@Size(min = 8, max = 128, message = "Confirm your password here.")
 	private String confirmPassword;
 	

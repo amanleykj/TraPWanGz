@@ -1,5 +1,6 @@
 package com.trapwangz.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -8,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.trapwangz.models.LoginUser;
+import com.trapwangz.models.Orders;
 import com.trapwangz.models.User;
+import com.trapwangz.repositories.OrderRepo;
 import com.trapwangz.repositories.UserRepo;
 
 @Service
@@ -16,6 +19,8 @@ public class UserService {
 
 	@Autowired
 	private UserRepo userRepo;
+	@Autowired
+	private OrderRepo orderRepo;
 	
 	public User register(User user, BindingResult result) {
 		Optional<User> maybeUser = userRepo.findByEmail(user.getEmail());
@@ -59,5 +64,16 @@ public class UserService {
 			return null;
 		}
 	}
+
+	
+//	public User getOrdersFromUser(List <Orders> orders) {
+//		Optional<User> user = userRepo.findById(id);
+//		if(user.isPresent()) {
+//			return user.get();
+//		}
+//		else {
+//			return null;
+//		}
+//	}
 	
 }

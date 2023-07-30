@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TraPWanGzApplication {
 
 	public static void main(String[] args) {
+		
+		
 		SpringApplication.run(TraPWanGzApplication.class, args);
 	}
 
